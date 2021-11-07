@@ -1,27 +1,21 @@
-/* ===== SHOW MENU ===== */
-const navMenu = document.getElementById('nav-menu');
-const closeNav = document.getElementById('nav-close');
-const toggleNav = document.getElementById('nav-toggle');
+// ===== SHOW MENU ===== //
+const navMenu = document.getElementById('nav-menu'),
+		toggleNav = document.getElementById('nav-toggle');
 
 // Show Menu
 toggleNav.addEventListener('click', ()=>{
 	navMenu.classList.toggle('show-menu')
 });
-
-// Hide Menu
-closeNav.addEventListener('click', ()=>{
-	navMenu.classList.remove('show-menu')
-});
 // ===== end show menu ===== //
 
-// ===== REMOVE MOBILE MENU =====  //
+// ===== REMOVE MOBILE MENU ===== //
 const navLink = document.querySelectorAll('.nav__link');
 
 function linkAction(){
 	navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click',linkAction));
-// ===== end remove menu ===== //
+// ===== end remove mobile menu ===== //
 
 // ===== SCROLL SECTIONS ACTIVE LINK ===== //
 const sections = document.querySelectorAll('section[id]');
@@ -42,20 +36,7 @@ function scrollActive(){
 	})
 }
 window.addEventListener('scroll', scrollActive);
-// ===== end scroll sections active link ===== //
-
-// ===== CHANGE BACKGROUND HEADER ===== //
-function scrollHeader(){
-	const nav = document.getElementById('header')
-
-	if (this.scrollY >= 200) {
-		nav.classList.add('scroll-header');
-	}else{
-		nav.classList.remove('scroll-header');
-	}
-}
-window.addEventListener('scroll', scrollHeader);
-// ===== end change background header ===== //
+// ===== end scroll sections active menu ===== //
 
 /* ===== COUNTDOWN TIMER ===== */
 const countdownDate = new Date("December 25, 2022 09:00:00").getTime();
@@ -83,8 +64,8 @@ const timerFunction = setInterval(() => {
 
 // ===== VIDEO ===== //
 const videoFile = document.getElementById('video-file'),
-      videoButton = document.getElementById('video-button'),
-      videoIcon = document.getElementById('video-icon');
+	  videoButton = document.getElementById('video-button'),
+	  videoIcon = document.getElementById('video-icon');
 
 function playPause(){
 	if(videoFile.paused){
@@ -127,13 +108,13 @@ form.addEventListener('submit', e => {
    e.preventDefault();
    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
    .then(response => {
-      // Alert: RSVP Respon
-      rsvpRespon.classList.toggle('rsvp-respon');
+	  // Alert: RSVP Respon
+	  rsvpRespon.classList.toggle('rsvp-respon');
 
-      // Resert Form
-      rsvpForm.reset();
+	  // Resert Form
+	  rsvpForm.reset();
 
-      console.log('Success!', response);
+	  console.log('Success!', response);
    })
    .catch(error => console.error('Error!', error.message))
 });
@@ -219,17 +200,20 @@ popupBtn.addEventListener('click', ()=>{
 // ===== end popup ===== //
 
 // // ===== AOS ANIMATE ===== //
-// 1. popup -> .popup__container
+// 1. home -> .home__content
 
-// 2. home -> .home__content
+// 2. quotes -> .quotes__container
 
-// 3. quotes -> .quotes__container
+// 3. couple -> .couple__container
 
-// 4. couple -> .couple__container
-
-// 5. event -> .event__box
+// 5. event -> .event__box, .event__line
 const eventBox = document.querySelectorAll('.event__box');
 eventBox.forEach((n, i) => {
+	n.dataset.aos = 'fade-down';
+	n.dataset.aosDelay = i * 100;
+});
+const eventLine = document.querySelectorAll('.event__line');
+eventLine.forEach((n, i) => {
 	n.dataset.aos = 'fade-down';
 	n.dataset.aosDelay = i * 100;
 });
@@ -259,11 +243,7 @@ galleryBox.forEach((img, i) => {
 // 12. pray -> .pray__container
 
 // 13. prokes -> .prokes__box
-const prokesBox = document.querySelectorAll('.prokes__box');
-prokesBox.forEach((n, i) => {
-	n.dataset.aos = 'flip-left';
-	n.dataset.aosDelay = i * 100;
-});
+
 
 // footer -> .footer__box
 const footerBox = document.querySelectorAll('.footer__box');
