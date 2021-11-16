@@ -231,7 +231,7 @@ label{
 	left: 0;
 	width: 100%;
 	z-index: var(--z-menu);
-	padding: 1.5rem 1rem;
+	padding: 1.5rem 1rem 1rem;
 	background-color: var(--white-color);
 	box-shadow: 0 1px 4px rgba(0,0,0,.1);
 	border-radius: 1rem 1rem 0 0;
@@ -266,7 +266,7 @@ label{
 	font-weight: var(--semi-bold-font);
 }
 .nav__icon{
-	font-size: 1.5rem;
+	width: 30px;
 	margin-bottom: .3rem;
 }
 
@@ -769,21 +769,19 @@ input[type='radio']:checked:after{
 	box-shadow: -15px -15px 15px rgba(0,0,0,.1),
 					15px 15px 15px rgba(0,0,0,.1);
 }
-/*.gift__button,
-.rekening__button{
-	width: -webkit-max-content;
-	width: -moz-max-content;
-	width: max-content;
-	margin-left: auto;
-	margin-right: auto;
-}*/
 .an{
 	display: block;
 	margin-bottom: var(--mb-2);
 }
+.bank__icon{
+	width: 120px;
+	object-fit: cover;
+	margin-bottom: var(--mb-1);
+}
 .gift__rekening{
 	display: none;
 }
+
 
 /* Show Rekening */
 .show-rekening{
@@ -1065,6 +1063,9 @@ footer:after{
 	}
 	.nav__name{
 		font-size: var(--normal-font-size);
+	}
+	.nav__icon{
+		width: 40px;
 	}
 	/* ===== end nav ===== */
 
