@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- ===== MAIN CSS ===== -->
-	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- ===== FAVICON ===== -->
+	<link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
 	<!-- ===== BOX ICONS ===== -->
 	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -19,12 +19,1181 @@
 	<!-- ===== AOS ANIMATE CSS ===== -->
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+	<!-- ===== MAIN CSS ===== -->
+	<style>
+		/* ===== GOOGLE FONT ===== */
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+		/* ===== FONT FACE ===== */
+		@font-face {
+		   font-family: 'anydoreregular';
+		   src: url('assets/fonts/anydore-webfont.woff2') format('woff2'),
+				url('assets/fonts/anydore-webfont.woff') format('woff');
+		   font-weight: normal;
+		   font-style: normal;
+		}
+
+		@font-face {
+		   font-family: 'barlistaregular';
+		   src: url('assets/fonts/barlista-zvqxb-webfont.woff2') format('woff2'),
+				url('assets/fonts/barlista-zvqxb-webfont.woff') format('woff');
+		   font-weight: normal;
+		   font-style: normal;
+		}
+		/* ===== end font face ===== */
+
+		/* ===== VARIABLES CSS ===== */
+		:root{
+			/* ===== Colors ===== */
+			--red-dark: #701c1f;
+		   --body-color: #f2f2f2;
+		   --gray-color: #d8d7d9;
+		   --text-color: #141414;
+		   --white-color: #FFF;
+
+			/* ===== Font & Typography ===== */
+			--text-font: 'Poppins', sans-serif;
+			--title-font: 'barlistaregular';
+			--subtitle-font: 'anydoreregular';
+			--biggest-font-size: 2.10rem;
+			--big-font-size: 1.8rem;
+			--h1-font-size: 1.5rem;
+			--h2-font-size: 1.25rem;
+			--h3-font-size: 1rem;
+			--normal-font-size: .938rem;
+			--small-font-size: .725rem;
+
+			/* ===== Font Weight ===== */
+			--regular-font: 400;
+			--medium-font: 500;
+			--semi-bold-font: 700;
+
+			/* ===== z-index ===== */
+			--z-toggle: 100;
+			--z-menu: 200;
+			--z-popup: 300;
+		}
+		/* ===== end variables css ===== */
+
+		/* Responsive Font & Typography */
+		@media screen and (min-width: 768px){
+			:root{
+				--biggest-font-size: 4rem;
+				--big-font-size: 2.5rem;
+				--h1-font-size: 2.25rem;
+				--h2-font-size: 1.5rem;
+				--h3-font-size: 1.25rem;
+				--normal-font-size: 1rem;
+				--small-font-size: .825rem;
+			}
+		}
+		/* end responsive font & typography */
+
+		/* ===== BASE ===== */
+		*,
+		::before,
+		::after{
+			box-sizing: border-box;
+		}
+		html{
+			scroll-behavior: smooth;
+		}
+		body{
+			margin: 0;
+			font-family: var(--text-font);
+			font-size: var(--normal-font-size);
+			background-color: var(--body-color);
+			color: var(--text-color);
+			line-height: 1.6;
+			overflow: hidden; /* POP-UP */
+		}
+		h1,h2,h3,p,ul{
+			margin: 0;
+		}
+		ul{
+			padding: 0;
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		img,
+		video{
+			max-width: 100%;
+			height: auto;
+		}
+		button,
+		input,
+		textarea{
+			outline: none;
+			border: none;
+			font-family: var(--text-font);
+			font-size: var(--normal-font-size);
+			color: var(--text-color);
+		}
+		label{
+			font-weight: var(--medium-font);
+		}
+		.l-main{
+			overflow-x: hidden !important;
+		}
+		/* ===== end base ===== */
+
+		/* ===== SCROLL BAR ===== */
+		::-webkit-scrollbar{
+			width: .6rem;
+			background: #E8E8E8;
+		}
+		::-webkit-scrollbar-thumb{
+			background: #686D76;
+			border-radius: .5rem;
+		}
+		/* ===== end scroll bar ===== */
+
+		/* ===== CSS CLASS ===== */
+		.section{
+			padding: 4rem 0 3rem;
+		}
+		.section__title,
+		.rsvp__title,
+		.prokes__title{
+			font-family: var(--subtitle-font) !important;
+			font-size: var(--big-font-size);
+			font-weight: var(--regular-font);
+			margin-bottom: 2rem;
+			text-align: center;
+		}
+		/* ===== end css class ===== */
+
+		/* ===== LAYOUT ===== */
+		.container{
+			max-width: 1024px;
+			width: calc(100% - 2rem);
+			margin-left: 1rem;
+			margin-right: 1rem;
+		}
+		.grid{
+			display: -ms-grid;
+			display: grid;
+			grid-gap: 1.5rem;
+		}
+		/* ===== layout ===== */
+
+		/* ===== SOCIAL MEDIA ===== */
+		.social__media-link{
+			background-color: var(--text-color);
+			color: var(--white-color);
+			display: -webkit-inline-box;
+			display: -ms-inline-flexbox;
+			display: inline-flex;
+			padding: 0.5rem;
+			font-size: 1.5rem;
+			border-radius: 50%;
+		}
+		/* ===== end social media ===== */
+
+		/* ===== BUTTONS ===== */
+		.button{
+			background-color: var(--red-dark);
+			color: var(--white-color);
+			padding: 0.6rem 1.5rem;
+			border-radius: .5rem;
+			cursor: pointer;
+			width: 100%;
+			max-width: -webkit-max-content;
+			max-width: -moz-max-content;
+			max-width: max-content;
+		}
+		.button--flex{
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+		}
+		.button--center{
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.button__icon{
+			font-size: 1.5rem;
+			margin-right: .5rem;
+		}
+		/* ===== end buttons ===== */
+
+		/* ===== NAV ===== */
+		.nav__toggle{
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: var(--text-color);
+			color: var(--white-color);
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			cursor: pointer;
+			position: fixed;
+			left: 1rem;
+			bottom: 1.2rem;
+			z-index: var(--z-toggle);
+		}
+		.menu__icon{
+			font-size: 1.5rem;
+		}
+		.nav__menu{
+			position: fixed;
+			bottom: -100%;
+			left: 0;
+			width: 100%;
+			z-index: var(--z-menu);
+			padding: 1.5rem 1rem 1.75rem;
+			background-color: var(--white-color);
+			box-shadow: 0 1px 4px rgba(0,0,0,.1);
+			border-radius: 1rem 1rem 0 0;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+		.nav__list{
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: (1fr)[3];
+				grid-template-columns: repeat(3,1fr);
+			grid-row-gap: 1.5rem;
+		}
+		.nav__name{
+			display: block;
+			font-weight: var(--semi-bold-font);
+			font-size: var(--small-font-size);
+		}
+		.nav__link{
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+					flex-direction: column;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+						-ms-grid-row-align: center;
+					align-items: center;
+			color: var(--text-color);
+			font-weight: var(--semi-bold-font);
+		}
+		.nav__icon{
+			width: 30px;
+			margin-bottom: .3rem;
+		}
+		.nav__close{
+			position: absolute;
+			right: 1rem;
+			bottom: .5rem;
+			font-size: 1.5rem;
+			color: red;
+			cursor: pointer;
+		}
+
+		/* Show Menu */
+		.show-menu{
+			bottom: 0;
+		}
+
+		/* Active Link */
+		.active-link{
+			position: relative;
+			color: var(--red-dark);
+			-webkit-transition: .3s;
+			transition: .3s;
+		}
+		.active-link::before{
+			content: '';
+			position: absolute;
+			bottom: -.3rem;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: var(--red-dark);
+			display: none;
+		}
+		/* ===== end nav ===== */
+
+		/* ===== HOME ===== */
+		.home{
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+			position: relative;
+			background-color: #000;
+		}
+		.home__container{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: var(--white-color);
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			text-align: center;
+		}
+		.home__subtitle{
+			font-weight: var(--regular-font);
+			margin-bottom: 1rem;
+		}
+		.home__title{
+			font-size: var(--biggest-font-size);
+			font-family: var(--title-font);
+			font-weight: var(--regular-font);
+			margin-bottom: 1rem;
+		}
+		.home__date{
+			font-family: var(--title-font);
+			font-size: 1.5rem;
+		}
+
+		/* Home Slideshow Background */
+		.home__slideshow{
+			width: inherit;
+			height: inherit;
+			position: relative;
+			overflow: hidden;
+		}
+		.home__slideshow::after{
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,.1);
+		}
+		.slideshow__item{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			opacity: 0;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+			-webkit-animation: cycleImages 31s infinite;
+					animation: cycleImages 31s infinite;
+		}
+
+		/* CSS Animations */
+		@-webkit-keyframes cycleImages{
+			25%{
+				opacity: 1;
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+			}
+			40%{
+				opacity: 0;
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+			}
+		}
+		@keyframes cycleImages{
+			25%{
+				opacity: 1;
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+			}
+			40%{
+				opacity: 0;
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+			}
+		}
+
+		.slideshow__item img{
+			width: 100%;
+			height: 100%;
+			-o-object-fit: cover;
+			   object-fit: cover;
+			-o-object-position: center;
+			   object-position: center;
+			-webkit-animation: zoom 31s infinite;
+					animation: zoom 31s infinite;
+		}
+
+		/* ===== CSS Animations ===== */
+		@-webkit-keyframes zoom{
+			100%{
+				-webkit-transform: scale(1.3);
+						transform: scale(1.3);
+			}
+		}
+		@keyframes zoom{
+			100%{
+				-webkit-transform: scale(1.3);
+						transform: scale(1.3);
+			}
+		}
+
+		.slideshow__item:nth-child(1),
+		.slideshow__item:nth-child(1) img{
+			-webkit-animation-delay: 0s;
+					animation-delay: 0s;
+		}
+		.slideshow__item:nth-child(2),
+		.slideshow__item:nth-child(2) img{
+			-webkit-animation-delay: 10s;
+					animation-delay: 10s;
+		}
+		.slideshow__item:nth-child(3),
+		.slideshow__item:nth-child(3) img{
+			-webkit-animation-delay: 20s;
+					animation-delay: 20s;
+		}
+		/* ===== end home ===== */
+
+		/* ===== QUOTES ===== */
+		.quotes{
+		   background-color: var(--red-dark);
+		   padding: 4.5rem 0 3rem;
+		}
+		.quotes__container{
+		   color: var(--white-color);
+		   text-align: center;
+		}
+		.quotes__img{
+		   margin-bottom: 1rem;
+		}
+		.bismillah__img{
+		   width: 350px;
+		}
+		.qoutes__greeting{
+		   display: block;
+		   font-style: italic;
+		   margin-bottom: 1.5rem;
+		}
+		.quotes__by{
+		   display: block;
+		   font-weight: var(--semi-bold-font);
+		   margin-top: 1rem;
+		}
+		/* ===== end quotes ===== */
+
+		/* ===== COUPLE ===== */
+		.couple{
+		   position: relative;
+		   overflow: hidden !important;
+		}
+		.couple__container{
+		   text-align: center;
+		}
+		.couple__description{
+		   margin-bottom: 1rem;
+		}
+		.couple__name{
+		   font-family: var(--subtitle-font);
+		   font-size: var(--h1-font-size);
+		   margin-bottom: .5rem;
+		}
+		.couple__with{
+		   font-family: var(--title-font);
+		   font-size: 4rem;
+		}
+		.couple__bg-left,
+		.couple__bg-right{
+		   position: absolute;
+		   z-index: -1;
+		}
+		.couple__bg-left{
+		   top: -20%;
+		   left: -20%;
+		}
+		.couple__bg-right{
+		   bottom: -20%;
+		   right: -20%;
+		}
+		.couple_bg{
+		   width: 300px;
+		   opacity: .5;
+		   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+		}
+		/* ===== end couple ===== */
+
+		/* ===== EVENT + COUNTDOWN TIMER ===== */
+		/* Event */
+		.event{
+		   background: rgba(0,0,0,.8) url(assets/img/pic1.jpg) no-repeat center/cover;
+		   background-blend-mode: overlay;
+		   padding: 2rem 1rem 2.5rem;
+		   color: var(--white-color);
+		   text-align: center;
+		}
+		.event__title{
+		   font-family: var(--subtitle-font);
+		   font-size: var(--h1-font-size);
+		   font-weight: var(--regular-font);
+		   margin-bottom: 1rem;
+		}
+		.event__box span{
+		   display: block;
+		}
+		.event__place{
+		   margin-bottom: 1.5rem;
+		}
+		.event__line{
+		   height: 2px;
+		   width: 100%;
+		   background-color: var(--white-color);
+		   margin: 1rem 0;
+		}
+		/* end event */
+
+		/* Countdown Timer */
+		.timer{
+			padding-top: 4.5rem;
+		}
+		.timer__container{
+			-ms-grid-columns: (minmax(120px,1fr))[auto-fit];
+				grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+			place-items: center !important;
+		}
+		.timer__number{
+			width: 120px;
+			height: 120px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+			font-family: var(--title-font);
+			font-size: var(--big-font-size);
+			font-weight: var(--semi-bold-font);
+			background-color: var(--red-dark);
+			margin: 0 auto .5rem;
+			border-top-left-radius: 1.8rem;
+			border-bottom-right-radius: 1.8rem;
+			border-top-right-radius: .6rem;
+			border-bottom-left-radius: .6rem;
+		}
+		.timer__description{
+			display: block;
+			text-align: center;
+			font-weight: var(--medium-font);
+		}
+
+		/* Timer Stop */
+		#timer-stop{
+			text-align: center;
+			margin-top: 1.5rem;
+		}
+		/* end countdown timer */
+		/* ===== end event + countdown timer ===== */
+
+		/* ===== GALLERY ===== */
+		.gallery{
+		   background-color: var(--red-dark);
+		}
+		.gallery .section__title{
+			color: var(--white-color);
+		}
+		.gallery__container{
+		   -ms-grid-columns: (minmax(300px,1fr))[auto-fit];
+			   grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+		}
+		.gallery__box{
+		   width: 100%;
+		   height: 300px;
+		   position: relative;
+		   border-radius: .5rem;
+		   overflow: hidden;
+		}
+		.gallery__img{
+		   position: absolute;
+		   top: 0;
+		   left: 0;
+		   width: 100%;
+		   height: 100%;
+		   -o-object-fit: cover;
+			  object-fit: cover;
+		   -o-object-position: center;
+			  object-position: center;
+		   -webkit-transition: .4s;
+		   transition: .4s;
+		}
+		.gallery__box:hover .gallery__img{
+		   -webkit-transform: scale(1.1);
+				   transform: scale(1.1);
+		}
+		/* ===== end gallery ===== */
+
+		/* ===== VIDEO ===== */
+		.video{
+			background-color: var(--red-dark);
+			padding: 2rem 0 4rem;
+		}
+		.video__content{
+		   position: relative;
+		}
+		.video__file{
+		   border-radius: .5rem;
+		}
+		.video__button{
+		   position: absolute;
+		   right: 1rem;
+		   bottom: -1rem;
+		   background-color: var(--white-color);
+		   color: var(--red-dark);
+		   width: 60px;
+		   height: 40px;
+		   -webkit-transition: .3s;
+		   transition: .3s;
+		   border-radius: .5rem;
+		   display: -webkit-box;
+		   display: -ms-flexbox;
+		   display: flex;
+		   -webkit-box-pack: center;
+			   -ms-flex-pack: center;
+				   justify-content: center;
+		   -webkit-box-align: center;
+			   -ms-flex-align: center;
+				   align-items: center;
+		   cursor: pointer;
+		}
+		.video__button-icon{
+		   font-size: 2rem;
+		}
+		/* ===== end video ===== */
+
+		/* ===== RSVP ===== */
+		.rsvp__container{
+			background-color: var(--red-dark);
+			padding: 2rem 1.2rem;
+			border-radius: .5rem;
+			color: var(--white-color);
+		}
+
+		/* RSVP Form*/
+		.rsvp__field:not(:last-child){
+		   margin-bottom: 1rem;
+		}
+		.rsvp__input,
+		.rsvp__textarea{
+		   width: 100%;
+		   border: 1px solid #D9D9D9;
+		   padding: 0.3rem 0.4rem;
+		   border-radius: .3rem;
+		   background-color: var(--gray-color);
+		}
+		.rsvp__textarea{
+		   height: 125px;
+		   resize: none;
+		}
+
+		/* Radio Btn */
+		input[type='radio']::after{
+		   position: relative;
+		   content: '';
+		   display: inline-block;
+		   width: 19px;
+		   height: 19px;
+		   top: -1px;
+		   left: -1px;
+		   border: 2px solid #d8e4e2;
+		   background-color: var(--white-color);
+		   border-radius: 50%;
+		   box-sizing: border-box;
+		   cursor: pointer;
+		}
+		input[type='radio']:checked::after{
+		   width: 19px;
+		   height: 19px;
+		   border-radius: 50%;
+		   top: -1px;
+		   left: -1px;
+		   position: relative;
+		   background-color: var(--text-color);
+		   content: '';
+		   display: inline-block;
+		   visibility: visible;
+		   border: 2px solid #d8e4e2;
+		}
+		.radio__text{
+		   margin-left: .5rem;
+		}
+		.radio__box:first-child .radio__text{
+		   margin-right: 1.5rem;
+		} 
+		.rsvp__field:nth-child(3){
+		   text-align: center;
+		}
+		.rsvp__field:nth-child(3) .radio__box{
+		   display: inline-block;
+		}
+		.rsvp__sesi{
+		   background-color: var(--gray-color);
+		   color: var(--text-color) !important;
+		   padding: 1rem;
+		   border-radius: .5rem;
+		}
+		.rsvp__button{
+			background-color: var(--text-color) !important;
+			margin-top: 2rem;
+		}
+
+		/* RSVP Respon */
+		.rsvp__respon{
+		   display: -webkit-box;
+		   display: -ms-flexbox;
+		   display: flex;
+		   -webkit-box-pack: start;
+			   -ms-flex-pack: start;
+				   justify-content: flex-start;
+		   -webkit-box-align: center;
+			   -ms-flex-align: center;
+				   align-items: center;
+		   -webkit-column-gap: .3rem;
+			  -moz-column-gap: .3rem;
+				   column-gap: .3rem;
+		   color: var(--white-color);
+		   display: none;
+		}
+		.rsvp__respon-icon{
+		   font-size: 1.3rem;
+		}
+
+		/* Show RSVP Respon */
+		.rsvp-respon{
+		   display: -webkit-box !important;
+		   display: -ms-flexbox !important;
+		   display: flex !important;
+		}
+		/* ===== end rsvp ===== */
+
+		/* ===== WEDDING GIFT ===== */
+		.gift{
+			margin-bottom: 3rem;
+		}
+		.gift-title{
+			font-family: var(--subtitle-font);
+			font-size: var(--big-font-size);
+		}
+		.gift-subtitle{
+			display: block;
+			margin-bottom: 2rem;
+		}
+		.gift__container{
+			text-align: center;
+			background-color: var(--white-color);
+			border-radius: 2rem;
+			padding: 2.5rem 1.5rem 3rem;
+			box-shadow: -15px -15px 15px rgba(0,0,0,.1),
+							15px 15px 15px rgba(0,0,0,.1);
+		}
+		.an{
+			display: block;
+			margin-bottom: 1rem;
+		}
+		.bank__icon{
+			width: 120px;
+			object-fit: cover;
+			margin-bottom: .5rem;
+		}
+		.gift__rekening{
+			display: none;
+		}
+
+
+		/* Show Rekening */
+		.show-rekening{
+			display: -ms-grid;
+			display: grid;
+		}
+		.show-rekening .gift__button{
+			margin-bottom: 3rem !important;
+		}
+		/* ===== end wedding gift ===== */
+
+		/* ===== PRAY ===== */
+		.pray{
+			margin-bottom: 3rem;
+		}
+		.pray-subtitle{
+			display: block;
+			margin-bottom: 2rem;
+		}
+		.pray__container{
+			background-color: var(--red-dark);
+			color: var(--white-color);
+		   text-align: center;
+		   padding: 2rem 1.5rem;
+		   border-radius: 2rem;
+		}
+		.pray__title{
+		   margin-bottom: 1rem;
+		}
+		.pray__kaligrafi{
+		   margin-bottom: .5rem;
+		   font-size: var(--h1-font-size);
+		}
+		.pray__by{
+		   display: block;
+		   margin-top: .5rem;
+		   font-size: var(--small-font-size);
+		}
+		/* ===== end pray ===== */
+
+		/* ===== PROKES ===== */
+		.prokes__title{
+			margin-bottom: 0;
+		}
+		.prokes__subtitle{
+			display: block;
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+		.prokes__content{
+			border: 2px solid var(--red-dark);
+			border-radius: 1.5rem;
+			padding: 2rem 1rem 1rem;
+		}
+		.prokes__container{
+			-ms-grid-columns: (minmax(120px,1fr))[auto-fit];
+				grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+		}
+		.prokes__img{
+			width: 120px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.prokes__description{
+			font-weight: var(--semi-bold-font);
+			display: block;
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+		/* ===== end prokes ===== */
+
+		/* ===== FOOTER ===== */
+		footer{
+			background: rgba(255,255,255,.5) url(assets/img/pic2.jpg) no-repeat center/cover;
+			background-blend-mode: overlay;
+			text-align: center;
+			padding: 5rem 0 2.5rem;
+			position: relative;
+		}
+		footer::after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100px;
+			z-index: 1;
+			background: -webkit-linear-gradient(top,#f2f2f2,transparent);
+			background: linear-gradient(to bottom,#f2f2f2,transparent);
+		}
+		.footer__container{
+		   text-align: center;
+		}
+		.footer__box span{
+		   display: block;
+		}
+		.footer__name{
+		   font-family: var(--title-font);
+		   font-size: var(--big-font-size);
+		   margin-bottom: 1rem;
+		}
+		.footer__thanks{
+		   font-weight: var(--medium-font);
+		   letter-spacing: 2px;
+		   margin-bottom: 2rem;
+		}
+		.footer__closing{
+			font-family: var(--subtitle-font);
+			font-size: var(--h2-font-size);
+		}
+		.footer__title,
+		.footer__description{
+			font-size: var(--small-font-size);
+		}
+		.footer__box:first-child{
+		   margin-bottom: 3rem;
+		}
+		.footer__description{
+		   margin-bottom: 1rem;
+		}
+		/* ===== end footer ===== */
+
+		/* ===== BACKSOUND ===== */
+		.backsound{
+		   width: 40px;
+		   height: 40px;
+		   background-color: var(--text-color);
+		   border-radius: 50%;
+		   display: -webkit-box;
+		   display: -ms-flexbox;
+		   display: flex;
+		   -webkit-box-pack: center;
+			   -ms-flex-pack: center;
+				   justify-content: center;
+		   -webkit-box-align: center;
+			   -ms-flex-align: center;
+				   align-items: center;
+		   position: fixed;
+		   right: 1rem;
+			bottom: 1.5rem;
+		}
+		.backsound__icon{
+		   width: 23px;
+		   -o-object-fit: cover;
+			  object-fit: cover;
+		   cursor: pointer;
+		   -webkit-filter: invert(1);
+				   filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+				   filter: invert(1);
+		}
+		/* ===== end backsound ===== */
+
+		/* ===== POP UP ===== */
+		.popup{
+		   position: fixed;
+		   top: 0;
+		   left: 0;
+		   width: 100%;
+		   height: 100%;
+		   overflow: hidden;
+		   background-color: rgba(0,0,0,.7);
+		   -webkit-backdrop-filter: blur(15px);
+				 backdrop-filter: blur(15px);
+		   display: -webkit-box;
+		   display: -ms-flexbox;
+		   display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+		   z-index: var(--z-popup);
+		}
+		.popup__container{
+			text-align: center;
+			background-color: var(--body-color);
+			border-radius: .5rem;
+			overflow: hidden;
+		}
+		.popup__content{
+			padding: 0 1rem;
+		}
+		.popup__img{
+			width: 100%;
+			height: 280px;
+			position: relative;
+		}
+		.popup__img img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			-o-object-fit: cover;
+			   object-fit: cover;
+			-o-object-position: center;
+			   object-position: center;
+		}
+		.popup__subtitle{
+			font-weight: var(--regular-font);
+			margin-bottom: .5rem;
+		}
+		.popup__subtitle2{
+			font-weight: var(--regular-font);
+		}
+		.popup__title{
+			font-family: var(--title-font);
+			font-size: var(--h1-font-size);
+			margin: 1rem 0 2rem;
+		}
+		.popup__button{
+			margin-bottom: 1.5rem;
+		}
+		/* ===== end pop up ===== */
+
+		/* ===== MEDIA QUERIS ===== */
+		@media screen and (max-width: 320px){
+			/* ===== NAV ===== */
+			.nav__name{
+				display: none;
+			}
+			.active-link::before{
+				display: block;
+			}
+			/* ===== end nav ===== */
+		}
+
+		@media screen and (max-width: 336px){
+		   /* ===== GALLERY ===== */
+		   .gallery__container{
+			  -ms-grid-columns: (minmax(100%,1fr))[auto-fit];
+				  grid-template-columns: repeat(auto-fit, minmax(100%,1fr));
+		   }
+		   /* ===== end gallery ===== */
+		}
+
+		@media screen and (min-width: 768px){
+			/* ===== CLASS CSS ===== */
+			.section{
+				padding-top: 5rem;
+			}
+			/* ===== end class css ===== */
+
+			/* ===== NAV ====== */
+			.nav__menu{
+				padding-bottom: 1rem;
+			}
+			.nav__list{
+				-ms-grid-columns: (1fr)[6];
+					grid-template-columns: repeat(6,1fr);
+			}
+			.nav__name{
+				font-size: var(--normal-font-size);
+			}
+			.nav__icon{
+				width: 40px;
+			}
+			.nav__close{
+				right: 1.5rem;
+				bottom: 1rem;
+			}
+			/* ===== end nav ===== */
+
+			/* ===== HOME ===== */
+			.home__date{
+				font-size: 2.5rem;
+			}
+			/* ===== end home ===== */
+
+			/* ===== QUOTES ===== */
+		   .bismillah__img{
+			  width: 410px;
+		   }
+		   .quotes__content{
+			  width: 80%;
+			  margin-left: auto;
+			  margin-right: auto;
+		   }
+		   /* ===== end quotes ===== */
+
+		   /* ===== COUPLE ===== */
+		   .couple__name{
+			  font-size: 2.25rem;
+		   }
+		   .couple__bg-left{
+			  top: -10%;
+			  left: -10%;
+		   }
+		   .couple__bg-right{
+			  bottom: -10%;
+			  right: -10%;
+		   }
+		   .couple_bg{
+			  width: 450px;
+		   }
+		   /* ===== end couple ===== */
+
+		   /* ===== EVENT ===== */
+		   .event__line{
+			  width: 50%;
+			  margin-left: auto;
+			  margin-right: auto;
+		   }
+		   /* ===== end event ===== */
+
+		   /* ===== VIDEO ===== */
+		   .video__content{
+			  width: 80%;
+			  margin-left: auto;
+			  margin-right: auto;
+		   }
+		   .video__button{
+			   width: 70px;
+			   height: 50px;
+			}
+		   /* ===== end video ===== */
+
+		   /* ===== WEDDING GIFT ===== */
+			.gift__rekening{
+				-ms-grid-columns: (1fr)[2];
+					grid-template-columns: repeat(2,1fr);
+			}
+			/* ===== end wedding gift ===== */
+
+			/* ===== PROKES ===== */
+			.prokes{
+				margin-bottom: 3rem;
+			}
+		   .prokes__subtitle{
+				width: 90%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.prokes__img{
+				width: 160px;
+			}
+			/* ===== end prokes ===== */
+
+			/* ===== POP UP ===== */
+			.popup__container{
+				-ms-grid-columns: (1fr)[2];
+					grid-template-columns: repeat(2,1fr);
+				-webkit-box-align: center;
+					-ms-flex-align: center;
+							-ms-grid-row-align: center;
+						align-items: center;
+				height: 80vh;
+			}
+			.popup__img{
+				height: 100%;
+			}
+			/* ===== end pop up ===== */
+		}
+
+		@media screen and (min-width: 1024px){
+			/* ===== LAYOUT ===== */
+			.container{
+				margin-left: auto;
+				margin-right: auto;
+			}
+			/* ===== end layout ===== */
+
+			/* ===== NAV ===== */
+			.nav__list{
+				width: 800px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			/* ===== end nav ===== */
+		}
+		/* ===== end media queris ===== */
+	</style>	
+	<!-- ===== end main css ===== -->
+
 	<title>Wedding Invitation - Aisyah & Dendri</title>
 </head>
 <body>
 	<!-- ===== HEADER ===== -->
 	<header class="l-header" id="header">
-		<nav class="nav bd-container">
+		<nav class="nav container">
 			<div class="nav__menu" id="nav-menu">
 				<ul class="nav__list">
 					<li class="nav__item">
@@ -64,10 +1233,11 @@
 						</a>
 					</li>
 				</ul>
+				<i class='bx bx-x nav__close' id="nav-close"></i>
 			</div>
 
 			<div class="nav__toggle" id="nav-toggle">
-				<i class='bx bx-grid-alt menu__icon'></i>
+				<i class='bx bx-menu menu__icon'></i>
 			</div>
 		</nav>
 	</header>
@@ -90,7 +1260,7 @@
 			</div>
 
 			<div class="home__container">
-				<div class="home__content bd-container" data-aos="fade-down">
+				<div class="home__content container" data-aos="fade-down">
 					<h2 class="home__subtitle">The Wedding of</h2>
 					<h1 class="home__title">Aisyah & Dendri</h1>
 					<p class="home__date">09 . Jan . 2021</p>
@@ -101,7 +1271,7 @@
 
 		<!-- ===== QUOTES ===== -->
 		<section class="quotes">
-			<div class="quotes__container bd-container" data-aos="fade-down">
+			<div class="quotes__container container" data-aos="fade-down">
 				<div class="quotes__img">
 					<img src="assets/img/bismillah-white.svg" alt="" class="bismillah__img">
 				</div>
@@ -116,7 +1286,7 @@
 
 		<!-- ===== COUPLE ===== -->
 		<section class="couple section" id="couple">
-			<div class="couple__container bd-container" data-aos="fade-down">
+			<div class="couple__container container" data-aos="fade-down">
 				<div class="couple__data">
 					<h2 class="couple__name">Siti Aisyah, S.H</h2>
 					<p class="couple__description">Putri dari Bapak H. Erwin Nasution S.H., MM<br>&<br>Ibu Hj. Suryati Batubara S.Pd., MM</p>
@@ -147,9 +1317,9 @@
 		</section>
 		<!-- ===== end coupe ===== -->
 
-		<!-- ===== EVENT ===== -->
+		<!-- ===== EVENT + COUNTDOWN TIMER ===== -->
 		<section class="event section" id="event">
-			<div class="event__container bd-container bd-grid">
+			<div class="event__container container grid">
 				<!-- 1 -->
 				<div class="event__box" >
 					<h2 class="event__title">Akad Nikah</h2>
@@ -157,7 +1327,7 @@
 					<span class="event__time">19:00 WIB s.d Selesai</span>
 					<span>&mdash;</span>
 					<span class="event__place">Jl. Nusa Indah No.56, Wek V, Padangsidimpuan Selatan</span>
-					<a href="https://www.google.com/maps/place/1%C2%B022'17.4%22N+99%C2%B016'26.8%22E/@1.3714962,99.2719202,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d1.3714962!4d99.2741089?hl=en" class="button__with-icon" target="_blank">
+					<a href="https://www.google.com/maps/place/1%C2%B022'17.4%22N+99%C2%B016'26.8%22E/@1.3714962,99.2719202,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d1.3714962!4d99.2741089?hl=en" class="button button--flex button--center" target="_blank">
 						<i class='bx bx-map-alt button__icon'></i>
 						<span>Get Direction</span>
 					</a>
@@ -172,7 +1342,7 @@
 					<span class="event__time">09:00 WIB s.d Selesai</span>
 					<span>&mdash;</span>
 					<span class="event__place">Jl. Nusa Indah No.56, Wek V, Padangsidimpuan Selatan</span>
-					<a href="https://www.google.com/maps/place/1%C2%B022'17.4%22N+99%C2%B016'26.8%22E/@1.3714962,99.2719202,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d1.3714962!4d99.2741089?hl=en" class="button__with-icon" target="_blank">
+					<a href="https://www.google.com/maps/place/1%C2%B022'17.4%22N+99%C2%B016'26.8%22E/@1.3714962,99.2719202,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d1.3714962!4d99.2741089?hl=en" class="button button--flex button--center" target="_blank">
 						<i class='bx bx-map-alt button__icon'></i>
 						<span>Get Direction</span>
 					</a>
@@ -187,15 +1357,15 @@
 					<span class="event__time">10:00 WIB s.d Selesai</span>
 					<span>&mdash;</span>
 					<span class="event__place">Jl. H. Sumanik (Belakang SDN 07 Simpuruik, Batusangkar)</span>
-					<a href="https://www.google.com/maps/place/0%C2%B026'45.5%22S+100%C2%B035'09.6%22E/@-0.4459781,100.5838147,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-0.4459781!4d100.5860034?hl=en-ID" class="button__with-icon" target="_blank">
+					<a href="https://www.google.com/maps/place/0%C2%B026'45.5%22S+100%C2%B035'09.6%22E/@-0.4459781,100.5838147,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-0.4459781!4d100.5860034?hl=en-ID" class="button button--flex button--center" target="_blank">
 						<i class='bx bx-map-alt button__icon'></i>
 						<span>Get Direction</span>
 					</a>
 				</div>
 			</div>
 
-			<div class="timer bd-container">
-				<div class="timer__container bd-grid">
+			<div class="timer container">
+				<div class="timer__container grid">
 					<div class="timer__box">
 						<div class="timer__number" id="days">0</div>
 						<span class="timer__description">Hari</span>			
@@ -216,14 +1386,14 @@
 				<h4 id="timer-stop"></h4>
 			</div>
 		</section>
-		<!-- ===== end event ===== -->
+		<!-- ===== end event + countdown timer ===== -->
 
 		<!-- ===== GALLERY ===== -->
 		<section class="gallery section" id="gallery">
-			<div class="bd-container">
-				<h2 class="section-title" data-aos="fade-down">Our Moments</h2>
+			<div class="container">
+				<h2 class="section__title" data-aos="fade-down">Our Moments</h2>
 
-				<div class="gallery__container bd-grid">
+				<div class="gallery__container grid">
 					<div class="gallery__box">
 						<a href="assets/img/pic1.jpg" data-fancybox="gallery" data-caption="Love">
 							<img src="assets/img/pic1.jpg" alt="" class="gallery__img">
@@ -261,7 +1431,7 @@
 
 		<!-- ===== VIDEO ===== -->
 		<div class="video">
-			<div class="video__container bd-container" data-aos="fade-down">
+			<div class="video__container container" data-aos="fade-down">
 				<div class="video__content">
 					<video class="video__file" id="video-file">
 						<source src="assets/video/video_sample.mp4" type="video/mp4">
@@ -276,11 +1446,11 @@
 		<!-- ===== end video ===== -->
 
 		<!-- ===== RSVP ===== -->
-		<section class="rsvp section bd-container" id="rsvp">
+		<section class="rsvp section container" id="rsvp">
 			<div class="rsvp__container" data-aos="fade-down">
 				<div class="rsvp__box">
 					<div class="rsvp__box-form">
-						<h2 class="section-title">R S V P</h2>
+						<h2 class="rsvp__title">R S V P</h2>
 						<form class="rsvp__form" name="rsvp-input-data">
 							<!-- Nama -->
 							<div class="rsvp__field">
@@ -312,7 +1482,7 @@
 								</div>
 								<span class="sesi__notes">Tamu undangan diharapkan hadir sesuai dengan sesi yang telah ditentukan.</span>
 							</div>
-							<button type="submit" class="rsvp__button button__with-icon">
+							<button type="submit" class="button button--flex button--center rsvp__button">
 								<i class='bx bx-envelope button__icon'></i>
 								<span>Kirim</span>
 							</button>
@@ -330,23 +1500,23 @@
 		<!-- ===== end RSVP ===== -->
 
 		<!-- ===== WEDDING GIFT ===== -->
-		<section class="gift section bd-container" id="gift">
+		<section class="gift section container" id="gift">
 			<div class="gift__container" data-aos="fade-down">
 				<h2 class="gift-title">Wedding Gift</h2>
 				<span class="gift-subtitle">We understand that some of you might want to send us a greeting or gift, <br>so please tap the following buttons to send them to us:</span>
 
-				<div class="button__with-icon gift__button" id="gift-button">
+				<div class="button button--flex button--center gift__button" id="gift-button">
 					<i class='bx bx-gift button__icon'></i>
 					<span>Wedding Gift</span>
 				</div>
 
-				<div class="gift__rekening bd-grid" id="gift-rekening">
+				<div class="gift__rekening grid" id="gift-rekening">
 					<div class="rekening__box">
 						<img src="assets/img/bca.png" alt="" class="bank__icon">
 						<h3 class="bank">BCA – <span id="bca">123123123</span></h3>
 						<span class="an">an. Lorem Ipsum</span>
 
-						<div class="button__with-icon rekening__button copy__bca">
+						<div class="button button--flex button--center rekening__button copy__bca">
 							<i class='bx bx-copy button__icon'></i>
 							<span>Copy Number</span>
 						</div>
@@ -356,7 +1526,7 @@
 						<h3 class="bank">Mandiri – <span id="mandiri">456456456</span></h3>
 						<span class="an">an. Lorem Ipsum</span>
 
-						<div class="button__with-icon rekening__button copy__mandiri">
+						<div class="button button--flex button--center rekening__button copy__mandiri">
 							<i class='bx bx-copy button__icon'></i>
 							<span>Copy Number</span>
 						</div>
@@ -367,7 +1537,7 @@
 		<!-- ===== end wedding gift ===== -->
 
 		<!-- ===== PRAY ===== -->
-		<div class="pray bd-container">
+		<div class="pray container">
 			<div class="pray__container" data-aos="fade-down">
 				<span class="pray-subtitle">Mohon doa restu kelancaran akad nikah kami,<br>serta mohon berkenan mendoakan kedua mempelai dengan doa:</span>
 				<div class="pray__box">
@@ -380,12 +1550,12 @@
 		<!-- ===== end pray ===== -->
 
 		<!-- ===== PROKES ===== -->
-		<section class="prokes section bd-container">
+		<section class="prokes section container">
 			<div class="prokes__content" data-aos="fade-down">
 				<h2 class="prokes__title">Prokes</h2>
 				<span class="prokes__subtitle">Demi memutus mata rantai penyebaran virus Covid-19 kami menerapkan protokol kesehatan dalam acara pernikahan kami. Kami harap Bapak/Ibu/Saudara/i mematuhi protokol kesehatan demi kenyamanan bersama.</span>
 
-				<div class="prokes__container bd-grid">
+				<div class="prokes__container grid">
 					<div class="prokes__box">
 						<div class="prokes__img">
 							<img src="assets/img/masker.png" alt="">
@@ -419,7 +1589,7 @@
 
 	<!-- ===== FOOTER ===== -->
 	<footer class="section">
-		<div class="footer__container bd-container">
+		<div class="footer__container container">
 			<div class="footer__box">
 				<span class="footer__name">Aisyah & Dendri</span>
 				<span class="footer__thanks">TERIMA KASIH</span>
@@ -432,10 +1602,6 @@
 					<!-- IG -->
 					<a href="https://www.instagram.com/undangdigitalaja/" target="_blank" class="social__media-link">
 						<i class='bx bxl-instagram social__media-icon'></i>
-					</a>
-					<!-- WA -->
-					<a href="https://api.whatsapp.com/send?phone=6287896889778&text=Halo+Admin%2C+mau+tanya+Undangan+Digital+dong!" target="_blank" class="social__media-link">
-						<i class='bx bxl-whatsapp social__media-icon'></i>
 					</a>
 				</div>
 			</div>
@@ -452,15 +1618,9 @@
 	</div>
 	<!-- ===== end backsound ===== -->
 
-	<!-- ===== SCROLL TOP ===== -->
-	<a href="#" class="scrolltop" id="scroll-top">
-		<i class='bx bx-chevron-up scrolltop__icon'></i>
-	</a>
-	<!-- ===== end scroll top ===== -->
-
 	<!-- ===== POP UP ===== -->
 	<div class="popup" id="popup">
-		<div class="popup__container bd-container bd-grid">
+		<div class="popup__container container grid">
 			<div class="popup__img">
 				<img src="assets/img/pic2.jpg" alt="">
 			</div>
@@ -469,7 +1629,7 @@
 				<div class="popup__line"></div>
 				<h3 class="popup__subtitle2">You are invited to the wedding of</h3>
 				<h1 class="popup__title">Aisyah & Dendri</h1>
-				<div class="popup__button button__with-icon" id="popup-btn">
+				<div class="popup__button button button--flex button--center" id="popup-btn">
 					<i class='bx bx-envelope button__icon'></i>
 					<span>Open Invitation</span>
 				</div>
@@ -485,6 +1645,266 @@
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 	<!-- ===== MAIN JS ===== -->
-	<script src="assets/js/script.js"></script>
+	<script>
+		// ===== SHOW MENU ===== //
+		const navMenu = document.getElementById('nav-menu'),
+				toggleNav = document.getElementById('nav-toggle'),
+				closeNav = document.getElementById('nav-close');
+
+		// Show Menu
+		toggleNav.addEventListener('click', ()=>{
+			navMenu.classList.toggle('show-menu')
+		});
+
+		// Hide Menu
+		closeNav.addEventListener('click', ()=>{
+			navMenu.classList.remove('show-menu')
+		});
+		// ===== end show menu ===== //
+
+		// ===== REMOVE MOBILE MENU ===== //
+		const navLink = document.querySelectorAll('.nav__link');
+
+		function linkAction(){
+			navMenu.classList.remove('show-menu')
+		}
+		navLink.forEach(n => n.addEventListener('click',linkAction));
+		// ===== end remove mobile menu ===== //
+
+		// ===== SCROLL SECTIONS ACTIVE LINK ===== //
+		const sections = document.querySelectorAll('section[id]');
+
+		function scrollActive(){
+			const scrollY = window.pageYOffset
+
+			sections.forEach(current =>{
+				const sectionHeight = current.offsetHeight
+				const sectionTop = current.offsetTop - 50;
+				sectionId = current.getAttribute('id')
+
+				if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+					document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+				}else{
+					document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+				}
+			})
+		}
+		window.addEventListener('scroll', scrollActive);
+		// ===== end scroll sections active menu ===== //
+
+		/* ===== COUNTDOWN TIMER ===== */
+		const countdownDate = new Date("December 25, 2022 09:00:00").getTime();
+
+		const timerFunction = setInterval(() => {
+			const currentDate = new Date().getTime();
+			const finalTime = countdownDate - currentDate;
+
+			if(finalTime > 0){
+				const days = Math.floor(finalTime / (1000*60*60*24));
+				const hours = Math.floor((finalTime % (1000*60*60*24)) / (1000*60*60));
+				const minutes = Math.floor((finalTime % (1000*60*60)) / (1000*60));
+				const seconds = Math.floor((finalTime % (1000*60)) / (1000));
+
+				document.getElementById('days').innerHTML = days;
+				document.getElementById('hours').innerHTML = hours;
+				document.getElementById('minutes').innerHTML = minutes;
+				document.getElementById('seconds').innerHTML = seconds;
+			}else{
+				clearInterval(timerFunction);
+				document.getElementById("timer-stop").innerHTML = "The Countdown is Over!";
+		   }
+		}, 1000);
+		// ===== end countdown timer ===== //
+
+		// ===== VIDEO ===== //
+		const videoFile = document.getElementById('video-file'),
+			  videoButton = document.getElementById('video-button'),
+			  videoIcon = document.getElementById('video-icon');
+
+		function playPause(){
+			if(videoFile.paused){
+				// Play video
+				videoFile.play()
+
+				// We change the icon
+				videoIcon.classList.add('ri-pause-line')
+				videoIcon.classList.remove('ri-play-line')
+			} else{
+				// Play video
+				videoFile.pause()
+
+				// We change the icon
+				videoIcon.classList.remove('ri-pause-line')
+				videoIcon.classList.add('ri-play-line')
+			}
+		}
+		videoButton.addEventListener('click', playPause);
+
+		function finalVideo(){
+			// Video ends, icon change
+			videoIcon.classList.remove('ri-pause-line')
+			videoIcon.classList.add('ri-play-line')
+		}
+		// ended, when the video ends
+		videoFile.addEventListener('ended', finalVideo);
+		// ===== end video ===== //
+
+		// ===== RSVP ===== //
+		const rsvpRespon = document.querySelector('.rsvp__respon');
+		const rsvpForm = document.querySelector('.rsvp__form');
+
+		// Area Google Sheets
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbw1j0LN_CLieUYLIrnIds9QvQBLYhIzvGJVEv3QQ0KlIL1t_901qb9-dAomsF-iZv3b/exec';
+
+		const form = document.forms['rsvp-input-data']
+
+		form.addEventListener('submit', e => {
+		   e.preventDefault();
+		   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+		   .then(response => {
+			  // Alert: RSVP Respon
+			  rsvpRespon.classList.toggle('rsvp-respon');
+
+			  // Resert Form
+			  rsvpForm.reset();
+
+			  console.log('Success!', response);
+		   })
+		   .catch(error => console.error('Error!', error.message))
+		});
+		// ===== end rsvp ===== //
+
+		// ===== WEDDING GIFT ===== //
+		const giftButton = document.getElementById('gift-button'),
+				giftRekening = document.getElementById('gift-rekening');
+
+		giftButton.addEventListener('click', ()=>{
+			giftRekening.classList.add('show-rekening');
+			giftButton.style.marginBottom = "3rem";
+		});
+
+		const bca = document.getElementById('bca'),
+				mandiri = document.getElementById('mandiri');
+		const copyBca = document.querySelector('.copy__bca'),
+				copyMandiri = document.querySelector('.copy__mandiri');
+
+		copyBca.addEventListener('click', ()=>{
+			document.execCommand("copy");
+		});
+		copyMandiri.addEventListener('click', ()=>{
+			document.execCommand("copy");
+		});
+
+		copyBca.addEventListener("copy", function(event){
+			event.preventDefault();
+			if(event.clipboardData){
+				event.clipboardData.setData("text", bca.textContent);
+				alert("Copied!")
+			}else{
+				alert("Not copied!")
+			}
+		});
+		copyMandiri.addEventListener("copy", function(event){
+			event.preventDefault();
+			if(event.clipboardData){
+				event.clipboardData.setData("text", mandiri.textContent);
+				alert('Copied!')
+			}else{
+				alert("Not Copied!")
+			}
+		});
+		// ===== end wedding gift ===== //
+
+		// ===== BACKSOUND ===== //
+		const backsound = document.getElementById('song');
+		const backsoundIcon = document.getElementById('backsound-icon');
+		const popupBtn = document.getElementById('popup-btn');
+
+		popupBtn.addEventListener('click', ()=>{
+			backsound.play();
+			backsoundIcon.src = "assets/img/pause.png";
+		})
+
+		backsoundIcon.onclick = ()=>{
+			if(backsound.paused){
+				backsound.play();
+				backsoundIcon.src = "assets/img/pause.png";
+			}else{
+				backsound.pause();
+				backsoundIcon.src = "assets/img/play.png";
+			}
+		}
+		// ===== end backsound ===== //
+
+		/* ===== POPUP ===== */
+		const popup = document.getElementById('popup');
+		// const popupBtn = document.getElementById('popup-btn');
+
+		popupBtn.addEventListener('click', ()=>{
+			document.body.style.overflow = 'auto';
+			popup.style.display = 'none';
+		});
+		// ===== end popup ===== //
+
+		// ===== AOS ANIMATE ===== //
+		// 1. home -> .home__content
+
+		// 2. quotes -> .quotes__container
+
+		// 3. couple -> .couple__container
+
+		// 5. event -> .event__box, .event__line
+		const eventBox = document.querySelectorAll('.event__box');
+		eventBox.forEach((n, i) => {
+			n.dataset.aos = 'fade-down';
+			n.dataset.aosDelay = i * 100;
+		});
+		const eventLine = document.querySelectorAll('.event__line');
+		eventLine.forEach((n, i) => {
+			n.dataset.aos = 'fade-down';
+			n.dataset.aosDelay = i * 100;
+		});
+
+		// 6. countdown timer -> .timer__box
+		const timerBox = document.querySelectorAll('.timer__box');
+		timerBox.forEach((n, i) => {
+			n.dataset.aos = 'flip-left';
+			n.dataset.aosDelay = i * 100;
+		});
+
+		// 7. section title -> .section-title (gallery)
+
+		// 8. gallery -> .gallery__box
+		const galleryBox = document.querySelectorAll('.gallery__box');
+		galleryBox.forEach((img, i) => {
+			img.dataset.aos = 'zoom-in-down';
+			img.dataset.aosDelay = i * 100;
+		});
+
+		// 9. video -> .video__container
+
+		// 10. rsvp -> .rsvp__container
+
+		// 11. gift -> .gift__container
+
+		// 12. pray -> .pray__container
+
+		// 13. prokes -> .prokes__box
+
+
+		// footer -> .footer__box
+		const footerBox = document.querySelectorAll('.footer__box');
+		footerBox.forEach((n, i) => {
+			n.dataset.aos = 'fade-down';
+			n.dataset.aosDelay = i * 100;
+		});
+
+		AOS.init({
+			duration: 1500,
+			once: true,  
+		});
+		// // ===== end aos animate ===== //
+	</script>
+	<!-- ===== end main js ===== -->
 </body>
 </html>
